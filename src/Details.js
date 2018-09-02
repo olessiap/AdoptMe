@@ -7,13 +7,9 @@ const petfinder = pf({
 });
 
 class Details extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: true
-    };
-  }
+  state = {
+    loading: true
+  };
   //make all the API requests
   componentDidMount() {
     petfinder.pet
