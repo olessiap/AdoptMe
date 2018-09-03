@@ -15,7 +15,12 @@ class Carousel extends React.Component {
     }
     return { photos };
   }
-
+  //make arrow function to avoid THIS returning undefined
+  handleClickIndex = event => {
+    this.setState({
+      active: +event.target.dataset.index //returns a string so convert to number with the plus
+    });
+  };
   render() {
     const { photos, active } = this.state;
     return (
@@ -25,10 +30,13 @@ class Carousel extends React.Component {
         <img src={photos[active].value} alt="animal" />
         <div className="carousel-smaller">
           {photos.map((photo, index) => (
+            /* eslint-disable-next-line */
             <img
+              onClick={this.handleClickIndex}
               key={photo.value}
               src={photo.value}
-              className={index === active ? "active" : ""}
+              data-index={index} //changes primary img
+              className={index === active ? "active" : ""} //active is a number
               alt="animal thumbnail"
             />
           ))}
