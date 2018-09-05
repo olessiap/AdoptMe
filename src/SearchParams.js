@@ -101,6 +101,7 @@ class SearchParams extends React.Component {
             ))}
           </select>
         </label>
+        <button>Submit</button>
       </div>
     );
   }
