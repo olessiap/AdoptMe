@@ -2,12 +2,15 @@
   "name": "-y",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://olessiap.github.io/AdoptMe/",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +30,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.1.1",
+    "gh-pages": "^1.2.0",
     "petfinder-client": "0.0.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
